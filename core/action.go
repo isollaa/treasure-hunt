@@ -3,13 +3,18 @@ package core
 import "treasure-hunt/asset"
 
 func initAction() {
+	//get init position coordinate
 	char := asset.GetCoordinateCharDefault()
+	//set random treasure position based on clear path
 	asset.SetRandomCoordinateTreasure()
+	//set character with the grid
 	asset.SetCharacterCoordinate(char.X, char.Y)
+	//move character to treasure coordinate
 	moveCharacter(char)
 }
 
 func moveCharacter(char asset.Coordinate) {
+	// temp variable to store last movement with number of loop
 	tempCoordinate := map[int]asset.Coordinate{}
 	counter := 0
 
@@ -21,11 +26,13 @@ func moveCharacter(char asset.Coordinate) {
 			}
 		}
 
+		// tebreak loop if character is on the same position
 		if isCharacterIdle(tempCoordinate, counter) {
 			break
 		}
 	}
 
+	//reset counter
 	counter = 0
 	for {
 		counter++

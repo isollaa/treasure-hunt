@@ -10,6 +10,7 @@ var (
 	yGridLength = 6
 )
 
+//set initial coordinates
 func init() {
 	initObstacleCoordinates()
 	setObstacleCoordinates()

@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+//build grid contains character, treasure, obstacle
 func buildGrid(coordinateChar Coordinate) (found bool) {
 	level := totalTreasure - len(coordinateTreasures)
 	fmt.Printf("Treasure - Hunt [%d / %d]\n", level, totalTreasure)

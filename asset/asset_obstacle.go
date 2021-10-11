@@ -2,6 +2,7 @@ package asset
 
 var coordinateObstacles = map[Coordinate]bool{}
 
+//set static obstacle coordinates
 func initObstacleCoordinates() {
 	coordinateObstacles = map[Coordinate]bool{
 		{2, 2}: true,
@@ -13,6 +14,7 @@ func initObstacleCoordinates() {
 	}
 }
 
+//set wall obstacle coordinates
 func setObstacleCoordinates() {
 	for i := 0; i < yGridLength; i++ {
 		for j := 0; j < xGridLength; j++ {
@@ -23,6 +25,7 @@ func setObstacleCoordinates() {
 	}
 }
 
+//get all obstacle coordinates
 func GetCoordinateObstacle() map[Coordinate]bool {
 	return coordinateObstacles
 }
